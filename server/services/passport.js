@@ -12,7 +12,7 @@ passport.serializeUser((user, done) => {
 });
 
 //it is called during all subsequent requests(subsequent requests menans requests after login) 
-//it takes cookie property(id in this case) and finds respective user.
+//it takes cookie property(id in this case) and matches respective user.
 passport.deserializeUser((id, done) => {
   User.findById(id).then(user => {
     done(null, user);
