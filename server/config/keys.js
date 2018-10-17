@@ -1,8 +1,8 @@
-module.exports={
-
-	googleClientID:    "340342204549-mbekvng23h6oei4o20eiup7u6o4s1rhh.apps.googleusercontent.com",
-	googleClientSecret: 	"BSI1L1v4Ry_b8ELK9a8BO3wI",
-	mongoURI: "mongodb://kaiz123:password123@ds129344.mlab.com:29344/emaily-dev",
-	cookieKey: "kjkhkhkhjhjkdakjdkada"
-
-};
+// keys.js - figure out what set of credentials to return
+if (process.env.NODE_ENV === 'production') {
+  // we are in production - return the prod set of keys
+  module.exports = require('./prod');
+} else {
+  // we are in development - return the dev keys!!!
+  module.exports = require('./dev');
+}
