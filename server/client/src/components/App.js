@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import * as actions from '../actions';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import Header from './Header';
-import Landing from './Landing';
-import Dashboard from './Dashboard';
-import SurveyNew from './surveys/SurveyNew';
+//import Landing from './Landing';
+//import Dashboard from './Dashboard';
+//import SurveyNew from './surveys/SurveyNew';
 
 class App extends Component {
-  // componentDidMount() {
-  //   this.props.fetchUser();
-  // }
+
+  componentDidMount() {
+    this.props.fetchUser(); //everything passed in connects second parameter becomes available as a prop in the component
+  }
 
   render() {
     return (
@@ -19,9 +20,9 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
-            <Route exact path="/" component={Landing} />
+            {/*<Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
-            <Route path="/surveys/new" component={SurveyNew} />
+            <Route path="/surveys/new" component={SurveyNew} />*/}
           </div>
         </BrowserRouter>
       </div>
@@ -29,4 +30,5 @@ class App extends Component {
   }
 }
 
-export default App;
+
+export default connect(null, actions)(App); //first parameter is for mapstatetoprops, second is for action creators

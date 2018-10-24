@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js",
-    "client": "npm run start --prefix client",
+    "client": "npm run start --prefix client", //prefix tells it to go inside the client folder
     "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "author": "",
@@ -14,6 +14,7 @@
   "dependencies": {
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.3",
+    "materialize-css": "^1.0.0",
     "mongoose": "^5.3.3",
     "nodemon": "^1.18.4",
     "passport": "^0.4.0",
