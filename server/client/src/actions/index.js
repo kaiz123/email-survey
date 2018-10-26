@@ -6,3 +6,10 @@ export const fetchUser = () => async dispatch => {	//action creator is a functio
 
   dispatch({ type: FETCH_USER, payload: res.data });	//redux thunk looks for a function inside your action creator function and passes the dispacth function as a parameter to it which can be called
 };
+
+
+export const handleToken = token => async dispatch => {
+  const res = await axios.post('/api/stripe', token);
+
+  dispatch({ type: FETCH_USER, payload: res.data });
+};

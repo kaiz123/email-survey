@@ -40,7 +40,7 @@ class Header extends Component {
   }
 }
 
-//the below function allows subsciption oif component to global state
+//the below function allows subsciption of component to global state
 function mapStateToProps({ auth }) {  //destructured state to single auth value
   return { auth }; //this is equivalent to {auth: auth}
 }

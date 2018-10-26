@@ -11,7 +11,8 @@ import Header from './Header';
 class App extends Component {
 
   componentDidMount() {
-    this.props.fetchUser(); //everything passed in connects second parameter becomes available as a prop in the component
+    this.props.fetchUser(); //everything passed in connect as second parameter(via either mapdispatchtoprops or action creators) becomes available as a prop in the component
+                            //after calling this function action is dispatched
   }
 
   render() {
@@ -31,4 +32,4 @@ class App extends Component {
 }
 
 
-export default connect(null, actions)(App); //first parameter is for mapstatetoprops, second is for action creators
+export default connect(null, actions)(App); //first parameter is for mapstatetoprops, second is for action creators or mapdispatchtoprops
