@@ -11,6 +11,8 @@ mongoose.connect(keys.mongoURI);
 
 const app=express();
 
+app.use(bodyParser.json());
+
 //the below middleware operation sets the req.session value
 app.use(
   cookieSession({
