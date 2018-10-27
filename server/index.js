@@ -11,6 +11,8 @@ mongoose.connect(keys.mongoURI);
 
 const app=express();
 
+app.use(bodyParser.json());
+
 //the below middleware operation sets the req.session value
 app.use(
   cookieSession({
@@ -24,6 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
 
 app.get('/', function (req, res) {
   res.send('hello world')
