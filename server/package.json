@@ -7,7 +7,6 @@
     "node": "8.1.1",
     "npm": "5.0.3"
   },
-
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
@@ -30,7 +29,7 @@
     "passport": "^0.3.2",
     "passport-google-oauth20": "^1.0.0",
     "path-parser": "^2.0.2",
-    "sendgrid": "^5.1.2",
+    "sendgrid": "^5.2.3",
     "stripe": "^4.23.1"
   }
 }
