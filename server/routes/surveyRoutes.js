@@ -18,11 +18,11 @@ module.exports = app => {
     res.send(surveys);
   });
 
-  app.get('/api/surveys/:surveyId/:choice', (req, res) => {
+  app.get('/api/surveys/:surveyId/:choice', (req, res) => { //we chose this path so that we have survey id and choice with us
     res.send('Thanks for voting!');
   });
 
-  app.post('/api/surveys/webhooks', (req, res) => {
+  app.post('/api/surveys/webhooks', (req, res) => { // get response from sendgrid and extract only survey id and choice and remove duplicates and events other than click. 
     const p = new Path('/api/surveys/:surveyId/:choice');
 
     _.chain(req.body)
@@ -44,7 +44,7 @@ module.exports = app => {
           },
           {
             $inc: { [choice]: 1 },
-            $set: { 'recipients.$.responded': true },
+            $set: { 'recipients.$.responded': true }, //the $ refers to the $elemmatch
             lastResponded: new Date()
           }
         ).exec();
