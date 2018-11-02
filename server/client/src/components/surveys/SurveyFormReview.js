@@ -6,7 +6,7 @@ import formFields from './formFields';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 
-const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
+const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => { //history comes as a prop because of using withRouter, submitSurvey comes because of actions parameter in connect
   const reviewFields = _.map(formFields, ({ name, label }) => {
     return (
       <div key={name}>
@@ -40,7 +40,7 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
 };
 
 function mapStateToProps(state) {
-  return { formValues: state.form.surveyForm.values };
+  return { formValues: state.form.surveyForm.values }; //redux form has put all the values in global state in object called surveyForm
 }
 
 export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));

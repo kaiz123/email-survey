@@ -56,6 +56,6 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: 'surveyForm',
-  destroyOnUnmount: false
+  form: 'surveyForm',  //specifies name of this form that will reference the values of this forms object in the reducer
+  destroyOnUnmount: false //when moving from this page to next page and back to this we want to preserve values in form
 })(SurveyForm);

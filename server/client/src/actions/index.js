@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER } from './types';
+import { FETCH_USER, FETCH_SURVEYS } from './types';
 
 export const fetchUser = () => async dispatch => {	//action creator is a function that returns an action like this one
   const res = await axios.get('/api/current_user');	//goes to server because of proxy in package.json of client

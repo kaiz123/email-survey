@@ -5,7 +5,7 @@ import SurveyForm from './SurveyForm';
 import SurveyFormReview from './SurveyFormReview';
 
 class SurveyNew extends Component {
-  state = { showFormReview: false };
+  state = { showFormReview: false }; //decides whether to show formreview component or surveyform component
 
   renderContent() {
     if (this.state.showFormReview) {
@@ -33,5 +33,5 @@ class SurveyNew extends Component {
 }
 
 export default reduxForm({
-  form: 'surveyForm'
+  form: 'surveyForm' //we use reduxform here to overwrite destroyOnUnmount and make it true so if user goes anywhere out from this page the values in the form do not have to be preserved
 })(SurveyNew);
