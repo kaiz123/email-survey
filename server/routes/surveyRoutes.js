@@ -24,7 +24,8 @@ module.exports = app => {
 
   app.post('/api/surveys/webhooks', (req, res) => { // get response from sendgrid and extract only survey id and choice and remove duplicates and events other than click. 
     const p = new Path('/api/surveys/:surveyId/:choice');
-
+    console.log(p);
+    console.log("hello");
     _.chain(req.body)
       .map(({ email, url }) => {
         const match = p.test(new URL(url).pathname);
